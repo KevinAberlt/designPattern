@@ -1,0 +1,16 @@
+装饰者模式：动态地将责任附加到对象上
+主要角色：
+  Component：主体，需要 被装饰者 和 ConcreteComponent 实现
+  ConcreteComponent：具体的主题
+  Decorator：装饰者 抽象类
+  XXXDecorator：装饰者实现类
+角色关系：XXXDecorator 关联 Component 实例，可以是 被装饰着的实例 也可以是 XXXDecorator
+
+优点：装饰类和被装饰类可以独立发展，不会相互耦合，装饰模式是继承的一个替代模式，装饰模式可以动态扩展一个实现类的功能
+缺点：多层装饰比较复杂。
+合成服用原则 和 ocp 原则
+
+源码解析：
+  FilterInputStream：实现了 InputStream 包含 InputStream  装饰着
+  DataInputStream，BufferedInputStream：实现了 FilterInputStream
+  FileInputStream 被装饰着
